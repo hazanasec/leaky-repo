@@ -1,0 +1,14 @@
+name: semgrep
+
+on: push
+
+jobs:
+  run-r2c-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: semgrep action step
+        id: semgrep
+        uses: returntocorp/semgrep-action@develop
+        with:
+          config: r2c
