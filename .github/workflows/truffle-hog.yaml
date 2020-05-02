@@ -6,13 +6,6 @@ jobs:
   truffle-hog:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: trufflehog-actions-scan
-      uses: edplato/trufflehog-actions-scan@master
-      with:
-        scanArguments: "--json > truffles.json"
-    - name: Upload truffles
-      uses: actions/upload-artifact@v1
-      with:
-        name: truffles
-        path: truffles.json
+      - uses: actions/checkout@master
+      - name: trufflehog-actions-scan
+        uses: edplato/trufflehog-actions-scan@master

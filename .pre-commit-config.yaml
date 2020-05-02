@@ -1,0 +1,5 @@
+-   repo: https://github.com/thoughtworks/talisman
+    rev: 'latest'  # Update me!
+    hooks:
+      commit:
+    -   id: talisman-commit
