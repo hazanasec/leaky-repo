@@ -1,5 +1,12 @@
--   repo: https://github.com/thoughtworks/talisman
-    rev: 'latest'  # Update me!
-    hooks:
-      commit:
-    -   id: talisman-commit
+repos:
+- repo: https://github.com/Yelp/detect-secrets.git
+  rev: v0.13.1
+  hooks:
+    - id: detect-secrets
+      args: ['--baseline', '.secrets.baseline']
+      exclude: .*/tests/.*
+- repo: https://github.com/bridgecrewio/checkov.git
+  rev: 1.0.264
+  hooks:
+    - id: checkov
+      files: \.tf$
